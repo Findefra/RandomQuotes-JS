@@ -21,9 +21,11 @@ jobs:
       env:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
- 
+    - uses: actions/checkout@v3
+    - name: Login to Docker Hub
       run: |
-       docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+       docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+    
     - name: Docker Push
       run: docker push ${{secrets.DOCKERHUB_USERNAME}}/findefra1/octopus_presentation_quotes
 	
