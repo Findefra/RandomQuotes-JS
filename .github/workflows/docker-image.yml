@@ -39,12 +39,12 @@ jobs:
         with:
           node-version: lts/*
       - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@latest
+        uses: gittools/actions/gitversion/setup@v0.10.2
         with:
           versionSpec: 5.x
       - id: determine_version
         name: Determine Version
-        uses: gittools/actions/gitversion/execute@latest
+        uses: gittools/actions/gitversion/execute@v0.10.2
         with:
           additionalArguments: /overrideconfig mode=Mainline
       - name: Install Octopus Deploy CLI
